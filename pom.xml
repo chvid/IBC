@@ -1,0 +1,102 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>IBC</artifactId>
+
+    <packaging>jar</packaging>
+
+    <groupId>ibcalpha</groupId>
+
+    <version>3.12.0-981</version>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>local-maven-repo</id>
+            <url>file:///${project.basedir}/repository</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.17.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.17.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.teamdev.jxbrowser</groupId>
+            <artifactId>jxbrowser</artifactId>
+            <version>7.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.teamdev.jxbrowser</groupId>
+            <artifactId>jxbrowser-mac</artifactId>
+            <version>7.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.teamdev.jxbrowser</groupId>
+            <artifactId>jxbrowser-swing</artifactId>
+            <version>7.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.interactivebrokers.tws</groupId>
+            <artifactId>twslaunch-install4j</artifactId>
+            <version>981</version>
+        </dependency>
+        <dependency>
+            <groupId>com.interactivebrokers.tws</groupId>
+            <artifactId>locales</artifactId>
+            <version>981</version>
+        </dependency>
+        <dependency>
+            <groupId>com.interactivebrokers.tws</groupId>
+            <artifactId>jts4launch</artifactId>
+            <version>981</version>
+        </dependency>
+        <dependency>
+            <groupId>com.interactivebrokers.tws</groupId>
+            <artifactId>twslaunch</artifactId>
+            <version>981</version>
+        </dependency>
+        <dependency>
+            <groupId>com.interactivebrokers.tws</groupId>
+            <artifactId>total-2020</artifactId>
+            <version>981</version>
+        </dependency>
+        <!--
+        mvn install:install-file -Dfile=/Users/chvid/Applications/Trader\ Workstation\ 981/jars/total-2020.jar -DgroupId=
+        com.interactivebrokers.tws -DartifactId=total-2020 -Dversion=981 -Dpackaging=jar -DgeneratePom=true -DlocalRepositoryPath=./repository
+
+        -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/distribution.xml</descriptor>
+                    </descriptors>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
