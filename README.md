@@ -31,13 +31,7 @@ And unpack the distributable in:
 target/IBC-3.12.0-981-distribution.zip
 ```
 
-At a suitable location. Alter IBController.ini as you wish and set JAVA_HOME to JDK8 if necessary.
-
-Use the encrypt password utility to encrypt your password:
-
-```
-sh encrypt-password.sh bananas
-```
+At a suitable location. Alter config.ini as you wish and set JAVA_HOME to JDK8 if necessary.
 
 Start the TWS with:
 
